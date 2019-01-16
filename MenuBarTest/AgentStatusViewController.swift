@@ -11,6 +11,7 @@ import Cocoa
 class AgentStatusViewController: NSViewController {
     
     var powerMonitor: PowerMonitor?
+    var communicator: AgentCommunicator?
     
     @IBOutlet weak var lblSSID: NSTextField!
     @IBOutlet weak var lblBSSID: NSTextField!
@@ -19,15 +20,22 @@ class AgentStatusViewController: NSViewController {
     @IBOutlet weak var lblChannel: NSTextField!
     @IBOutlet weak var lblChannelWidth: NSTextField!
     @IBOutlet weak var txtNotifications: NSTextField!
-    
+        
     @IBAction func btnRefreshClicked(sender: NSButton) {
         refreshWiFiInfo()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        connectToDaemon()
         refreshWiFiInfo()
         startPowerMonitor()
+    }
+    
+    private func connectToDaemon() {
+        communicator = AgentCommunicator()
+        communicator!.setupNetworkCommunication()
+        communicator!.sendMessage("Hello Daemon")
     }
     
     private func startPowerMonitor() {
@@ -36,15 +44,19 @@ class AgentStatusViewController: NSViewController {
             powerMonitor = PowerMonitor()
             powerMonitor!.screensDidSleepHandler = { notification in
                 self.txtNotifications.stringValue += "Screens went to sleep\n"
+                self.communicator!.sendMessage("Screens went to sleep")
             }
             powerMonitor!.screensDidWakeHandler = { notification in
                 self.txtNotifications.stringValue += "Screens are awake\n"
+                self.communicator!.sendMessage("Screens are awake")
             }
             powerMonitor!.willSleepHandler = { notification in
                 self.txtNotifications.stringValue += "Computer is sleeping\n"
+                self.communicator!.sendMessage("Computer is sleeping")
             }
             powerMonitor!.didWakeHandler = { notification in
                 self.txtNotifications.stringValue += "Computer is awake\n"
+                self.communicator!.sendMessage("Computer is awake")
             }
         }
         powerMonitor?.start()
@@ -58,6 +70,8 @@ class AgentStatusViewController: NSViewController {
         lblTxRate.stringValue = String(format: "%.2f", info.transmitRate)
         lblChannel.stringValue = String(format: "%i", info.channel)
         lblChannelWidth.stringValue = String(format: "%i", info.channelWidth)
+        
+        communicator!.sendMessage(info.ssid!)
     }
     
 }

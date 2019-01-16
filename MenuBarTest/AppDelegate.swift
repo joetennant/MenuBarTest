@@ -30,7 +30,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             }
         }
         
-        
     }
     
     @objc func togglePopover(_ sender: Any?) {

@@ -15,6 +15,7 @@
 		D8B762FB21ECD0360033F33B /* EventMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B762FA21ECD0360033F33B /* EventMonitor.swift */; };
 		D8B762FD21EE18F70033F33B /* WiFiInfoCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B762FC21EE18F70033F33B /* WiFiInfoCenter.swift */; };
 		D8B762FF21EE79C80033F33B /* PowerMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B762FE21EE79C80033F33B /* PowerMonitor.swift */; };
+		D8B7630121EF91A20033F33B /* AgentCommunicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B7630021EF91A20033F33B /* AgentCommunicator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,12 +24,12 @@
 		D8B762EA21E927C00033F33B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D8B762ED21E927C00033F33B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D8B762EF21E927C00033F33B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D8B762F021E927C00033F33B /* MenuBarTest.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MenuBarTest.entitlements; sourceTree = "<group>"; };
 		D8B762F621E92E680033F33B /* AgentStatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentStatusViewController.swift; sourceTree = "<group>"; };
 		D8B762F721E92E680033F33B /* AgentStatusViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AgentStatusViewController.xib; sourceTree = "<group>"; };
 		D8B762FA21ECD0360033F33B /* EventMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventMonitor.swift; sourceTree = "<group>"; };
 		D8B762FC21EE18F70033F33B /* WiFiInfoCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WiFiInfoCenter.swift; sourceTree = "<group>"; };
 		D8B762FE21EE79C80033F33B /* PowerMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerMonitor.swift; sourceTree = "<group>"; };
+		D8B7630021EF91A20033F33B /* AgentCommunicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentCommunicator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,10 +68,10 @@
 				D8B762EA21E927C00033F33B /* Assets.xcassets */,
 				D8B762EC21E927C00033F33B /* Main.storyboard */,
 				D8B762EF21E927C00033F33B /* Info.plist */,
-				D8B762F021E927C00033F33B /* MenuBarTest.entitlements */,
 				D8B762FA21ECD0360033F33B /* EventMonitor.swift */,
 				D8B762FC21EE18F70033F33B /* WiFiInfoCenter.swift */,
 				D8B762FE21EE79C80033F33B /* PowerMonitor.swift */,
+				D8B7630021EF91A20033F33B /* AgentCommunicator.swift */,
 			);
 			path = MenuBarTest;
 			sourceTree = "<group>";
@@ -109,7 +110,7 @@
 						CreatedOnToolsVersion = 10.1;
 						SystemCapabilities = {
 							com.apple.Sandbox = {
-								enabled = 1;
+								enabled = 0;
 							};
 						};
 					};
@@ -153,6 +154,7 @@
 			files = (
 				D8B762FD21EE18F70033F33B /* WiFiInfoCenter.swift in Sources */,
 				D8B762F821E92E680033F33B /* AgentStatusViewController.swift in Sources */,
+				D8B7630121EF91A20033F33B /* AgentCommunicator.swift in Sources */,
 				D8B762FF21EE79C80033F33B /* PowerMonitor.swift in Sources */,
 				D8B762E721E927BD0033F33B /* AppDelegate.swift in Sources */,
 				D8B762FB21ECD0360033F33B /* EventMonitor.swift in Sources */,
@@ -292,7 +294,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = MenuBarTest/MenuBarTest.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = PK2NBHJ75P;
@@ -311,7 +312,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = MenuBarTest/MenuBarTest.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = PK2NBHJ75P;
